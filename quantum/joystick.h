@@ -69,3 +69,5 @@ void joystick_flush(void);
 
 void register_joystick_button(uint8_t button);
 void unregister_joystick_button(uint8_t button);
+
+void joystick_set_axis(uint8_t axis, int16_t value);

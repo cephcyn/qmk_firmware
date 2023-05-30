@@ -36,3 +36,12 @@ void unregister_joystick_button(uint8_t button) {
     joystick_status.status |= JS_UPDATED;
     joystick_flush();
 }
+
+void joystick_set_axis(uint8_t axis, int16_t value) {
+    if (axis >= JOYSTICK_AXES_COUNT) return;
+
+    if (value != joystick_status.axes[axis]) {
+        joystick_status.axes[axis] = value;
+        joystick_status.status |= JS_UPDATED;
+    }
+}
